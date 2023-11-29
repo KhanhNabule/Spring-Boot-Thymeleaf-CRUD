@@ -12,17 +12,14 @@ import java.util.Optional;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
-
     @Autowired
     public EmployeeServiceImpl(EmployeeRepository theEmployeeRepository) {
         employeeRepository = theEmployeeRepository;
     }
-
     @Override
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
-
     @Override
     public Employee findById(int theId) {
         Optional<Employee> result = employeeRepository.findById(theId);
@@ -39,12 +36,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return theEmployee;
     }
-
     @Override
     public Employee save(Employee theEmployee) {
         return employeeRepository.save(theEmployee);
     }
-
     @Override
     public void deleteById(int theId) {
         employeeRepository.deleteById(theId);
